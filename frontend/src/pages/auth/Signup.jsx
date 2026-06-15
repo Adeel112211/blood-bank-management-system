@@ -22,7 +22,8 @@ export default function Register() {
       alert("✅ Registered Successfully!");
       navigate("/login"); // redirect after success
     } catch (err) {
-      alert("❌ " + err.response.data.error);
+      const message = err.response?.data?.error || err.response?.data?.message || "Registration failed due to a network error. Ensure the backend is running.";
+      alert("❌ " + message);
     }
   };
 

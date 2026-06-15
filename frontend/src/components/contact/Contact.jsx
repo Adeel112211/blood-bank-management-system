@@ -33,7 +33,7 @@ const Contact = () => {
           <div className="text-center shadow-md p-8 rounded-xl hover:shadow-xl transition">
             <Phone className="w-10 h-10 text-red-600 mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2">Emergency Helpline</h3>
-            <p className="text-gray-600">+91 98765 43210</p>
+            <p className="text-gray-600">+92 300 1234567</p>
             <p className="text-gray-600">Available 24/7</p>
           </div>
 
@@ -49,8 +49,8 @@ const Contact = () => {
           <div className="text-center shadow-md p-8 rounded-xl hover:shadow-xl transition">
             <MapPin className="w-10 h-10 text-red-600 mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2">Head Office</h3>
-            <p className="text-gray-600">Navi Mumbai, Maharashtra</p>
-            <p className="text-gray-600">India - 410206</p>
+            <p className="text-gray-600">Gulberg III, Lahore, Punjab</p>
+            <p className="text-gray-600">Pakistan - 54660</p>
           </div>
         </div>
       </section>
@@ -68,7 +68,7 @@ const Contact = () => {
             <div className="space-y-4">
               <div className="flex items-center">
                 <Phone className="text-red-600 mr-3" />
-                <span className="text-gray-700">+91 1234567890cd</span>
+                <span className="text-gray-700">+92 300 1234567</span>
               </div>
               <div className="flex items-center">
                 <Mail className="text-red-600 mr-3" />
@@ -76,7 +76,7 @@ const Contact = () => {
               </div>
               <div className="flex items-center">
                 <MapPin className="text-red-600 mr-3" />
-                <span className="text-gray-700">Navi Mumbai, Maharashtra</span>
+                <span className="text-gray-700">Gulberg III, Lahore, Punjab</span>
               </div>
             </div>
 
@@ -160,7 +160,7 @@ const Contact = () => {
         <iframe
           title="map"
           className="w-full h-96"
-          src="https://maps.google.com/maps?q=Navi%20Mumbai&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          src="https://maps.google.com/maps?q=Lahore+Pakistan&t=&z=13&ie=UTF8&iwloc=&output=embed"
           allowFullScreen
         ></iframe>
       </section>

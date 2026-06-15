@@ -8,11 +8,13 @@ const GENDERS = ["Male", "Female", "Other"];
 const BLOOD_GROUPS = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"];
 
 const STATES = {
-  Maharashtra: ["Mumbai", "Pune", "Nagpur"],
-  Karnataka: ["Bengaluru", "Mysuru", "Mangalore"],
-  Gujarat: ["Ahmedabad", "Surat", "Vadodara"],
-  Delhi: ["New Delhi", "Rohini", "Dwarka"],
-  "Tamil Nadu": ["Chennai", "Madurai", "Coimbatore"],
+  Punjab: ["Lahore", "Faisalabad", "Rawalpindi", "Gujranwala", "Multan", "Sialkot", "Sargodha", "Bahawalpur"],
+  Sindh: ["Karachi", "Hyderabad", "Sukkur", "Larkana", "Nawabshah", "Mirpur Khas", "Thatta"],
+  "Khyber Pakhtunkhwa": ["Peshawar", "Abbottabad", "Mardan", "Mingora", "Kohat", "Mansehra", "Dera Ismail Khan"],
+  Balochistan: ["Quetta", "Turbat", "Khuzdar", "Hub", "Chaman", "Gwadar"],
+  "Azad Kashmir": ["Muzaffarabad", "Mirpur", "Rawalakot", "Kotli", "Bagh"],
+  Gilgit: ["Gilgit", "Skardu", "Chilas", "Hunza"],
+  "Islamabad Capital Territory": ["Islamabad"],
 };
 
 // Validation functions
@@ -31,17 +33,17 @@ const validators = {
   },
   phone: (value) => {
     if (!value) return "Phone number is required";
-    if (value.length !== 10) return "Phone number must be exactly 10 digits";
-    if (!/^[6-9][0-9]{9}$/.test(value))
-      return "Phone number must start with 6-9";
+    if (value.length !== 11) return "Phone number must be exactly 11 digits";
+    if (!/^0[0-9]{10}$/.test(value))
+      return "Phone number must start with 0 (e.g. 03001234567)";
     return "";
   },
   emergencyContact: (value) => {
     if (!value) return "Emergency contact is required";
-    if (value.length !== 10)
-      return "Emergency contact must be exactly 10 digits";
-    if (!/^[6-9][0-9]{9}$/.test(value))
-      return "Emergency contact must start with 6-9";
+    if (value.length !== 11)
+      return "Emergency contact must be exactly 11 digits";
+    if (!/^0[0-9]{10}$/.test(value))
+      return "Emergency contact must start with 0 (e.g. 03001234567)";
     return "";
   },
   dob: (value) => {
@@ -477,8 +479,8 @@ export default function DonorRegisterForm() {
                         ? "border-red-500"
                         : "border-gray-300"
                     }`}
-                    placeholder="10-digit phone number"
-                    maxLength="10"
+                    placeholder="11-digit number (e.g. 03001234567)"
+                    maxLength="11"
                   />
                   {shouldShowError("phone") && (
                     <p className="text-red-500 text-sm mt-1 flex items-center">
@@ -506,8 +508,8 @@ export default function DonorRegisterForm() {
                         ? "border-red-500"
                         : "border-gray-300"
                     }`}
-                    placeholder="10-digit emergency contact"
-                    maxLength="10"
+                    placeholder="11-digit number (e.g. 03001234567)"
+                    maxLength="11"
                   />
                   {shouldShowError("emergencyContact") && (
                     <p className="text-red-500 text-sm mt-1 flex items-center">
@@ -820,7 +822,7 @@ export default function DonorRegisterForm() {
                         ? "border-red-500"
                         : "border-gray-300"
                     }`}
-                    placeholder="6-digit pincode"
+                    placeholder="Postal code (e.g. 54000)"
                     maxLength="6"
                   />
                   {shouldShowError("address.pincode") && (

@@ -27,7 +27,7 @@ const donorSchema = new mongoose.Schema(
     phone: {
       type: String,
       required: [true, "Phone number is required"],
-      match: [/^[6-9][0-9]{9}$/, "Please enter a valid 10-digit phone number"],
+      match: [/^0[0-9]{10}$/, "Please enter a valid 11-digit Pakistani phone number (e.g. 03001234567)"],
     },
     role: {
       type: String,
